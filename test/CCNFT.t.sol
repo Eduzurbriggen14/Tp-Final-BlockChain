@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-import "lib/forge-std/test";
+import "../lib/forge-std/src/Test.sol";
 import "../src/BUSD.sol";
 import "../src/CCNFT.sol";
 
@@ -31,7 +31,7 @@ contract CCNFTTest is Test {
 // Prueba de "setFundsCollector" del contrato CCNFT. 
 // Llamar al método y despues verificar que el valor se haya establecido correctamente.
     function testSetFundsCollector() public {
-        assertEq(ccnf.fundsCollector(), address(0), "Valor de direccion erroneo");
+        assertEq(ccnft.fundsCollector(), address(0), "Valor de direccion erroneo");
         ccnft.setFundsCollector(funds);
         assertEq(ccnft.fundsCollector(), funds, "Direccion erronea, no coincide con la direccion de fundsCollector");
     }
@@ -49,7 +49,7 @@ contract CCNFTTest is Test {
     function testSetProfitToPay() public {
         assertEq(ccnft.profitToPay(), 0, "Valor incorrecto de profitToPay");
         ccnft.setProfitToPay(100);
-        assertEq(ccnft.profitToPay, 100, "Valor incorrecto, difiere del profitToPay");
+        assertEq(ccnft.profitToPay(), 100, "Valor incorrecto, difiere del profitToPay");
 
         
     }

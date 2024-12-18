@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 import {CCNFT} from "../src/CCNFT.sol";
-import "lib/forge-std";
+import "../lib/forge-std/src/Script.sol";
 
 contract DeployCCNFT is Script{
 
